@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Ops Technologies | Your Gateway to Elite Kenyan Talent</title>
+    <meta name="description" content="Quick Ops Technologies: Premier Kenyan BPO offering specialized assistance for European and American companies in Healthcare, Real Estate, Salesforce, and more.">
+    <meta name="keywords" content="virtual assistant Kenya, BPO services Kenya, healthcare virtual assistant, real estate VA, salesforce support, cold calling services, accounting outsourcing, travel virtual assistant, European companies, American businesses, offshore staffing, Kenyan talent">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
+    <style>
+        :root {
+            --color-primary: #2C3E50;
+            --color-secondary: #E67E22;
+            --color-accent: #3498DB;
+            --color-light: #ECF0F1;
+            --color-dark: #2C3E50;
+            --color-background: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-dark);
+            background-color: var(--color-background);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .logo-dot {
+            color: var(--color-secondary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            color: var(--color-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--color-secondary);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-secondary);
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--color-secondary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            background: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section - Enhanced */
+        .hero {
+            height: 90vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        
+        #vanta-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 750px;
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero-title {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: var(--color-dark);
+            font-weight: 400;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: var(--color-secondary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* New: Introduction Section */
+        .intro {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .intro-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .intro-content h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+        }
+        
+        .intro-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #FFFFFF, #F8F9FA);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--color-secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service-link {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .service-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-link:hover {
+            color: var(--color-primary);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #F8F9FA, #FFFFFF);
+            position: relative;
+        }
+        
+        .benefits-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card p {
+            color: #666;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: white;
+        }
+        
+        .cta-btn {
+            background: white;
+            color: var(--color-primary);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btn:hover {
+            background: var(--color-secondary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Form Styling */
+        .form-container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--color-dark);
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus, .form-textarea:focus {
+            border-color: var(--color-accent);
+            outline: none;
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Page Sections */
+        .page-section {
+            padding: 100px 0;
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Careers Section */
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .career-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+        
+        .career-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .career-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+        
+        .career-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .career-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* About Us Section */
+        .about-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .mission-card, .vision-card {
+            background: var(--color-light);
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .mission-card h3, .vision-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 15px;
+        }
+        
+        /* Footer - Optimized & Minimized */
+        footer {
+            background: var(--color-dark);
+            color: white;
+            padding: 30px 0 15px;
+            font-size: 0.85rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .footer-dot {
+            color: var(--color-secondary);
+        }
+        
+        .footer-heading {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: var(--color-secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: #CCC;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-secondary);
+        }
+        
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #CCC;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact i {
+            margin-right: 8px;
+            color: var(--color-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: #999;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .nav-item {
+                margin-left: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                font-size: 1.5rem;
+                color: var(--color-primary);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: white;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .hero-content {
+                padding: 20px;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-heading:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-contact {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                width: 100%;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+            
+            .intro-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-text">Quick Ops<span class="logo-dot">.</span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link" data-page="home">Home</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link" data-page="services">Services</a></li>
+                <li class="nav-item"><a href="#why-us" class="nav-link" data-page="why-us">Why Us</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-page="about">About Us</a></li>
+                <li class="nav-item"><a href="#careers" class="nav-link" data-page="careers">Careers</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link nav-cta" data-page="contact">Get Started</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section class="hero" id="home-section">
+            <div id="vanta-background"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Scale Your Business with <span class="floating" style="color: var(--color-secondary);">Elite Kenyan Talent</span></h1>
+                    <p class="hero-subtitle">Reduce operational costs by up to 60% while maintaining premium quality with our specialized, scalable, expert outsourcing solutions.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary" data-page="contact">Get Started Today</a>
+                        <a href="#services" class="btn btn-outline" data-page="services" id="explore-services-btn">Explore Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="intro">
+            <div class="container">
+                <div class="intro-content">
+                    <h2>Premier Outsourcing Services from Kenya</h2>
+                    <p>Quick Ops Technologies connects businesses across the world with highly skilled, English-fluent professionals in Kenya. We provide specialized support across multiple industries, helping you scale efficiently while reducing operational costs.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">60%</div>
+                            <div class="stat-text">Cost Savings</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-text">Availability</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-text">Client Satisfaction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-text">Trained Professionals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Specialized Services</h2>
+                    <p>We deliver excellence across multiple industries with our dedicated team</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Virtual Assistance</h3>
+                            <p>Comprehensive administrative support including email management, scheduling, data entry, and customer service.</p>
+                            <a href="#" class="service-link" data-service="virtual-assistance"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Travel Assistance</h3>
+                            <p>Expert support for travel agencies: flight & hotel bookings, itinerary planning, and customer communication.</p>
+                            <a href="#" class="service-link" data-service="travel"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Healthcare Support</h3>
+                            <p>Secure, compliant virtual assistants for medical practices handling scheduling, billing, and records.</p>
+                            <a href="#" class="service-link" data-service="healthcare"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Campaigns & Cold Calling</h3>
+                            <p>Boost your sales with our expert outbound calling teams specializing in lead generation.</p>
+                            <a href="#" class="service-link" data-service="campaigns"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Accounting & Bookkeeping</h3>
+                            <p>Outsource your finance functions to qualified experts handling bookkeeping and financial reporting.</p>
+                            <a href="#" class="service-link" data-service="accounting"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Real Estate Support</h3>
+                            <p>Scale your real estate business with support for listings, transaction coordination, and lead nurturing.</p>
+                            <a href="#" class="service-link" data-service="real-estate"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Salesforce Support</h3>
+                            <p>Expert Salesforce administration, data management, and CRM optimization for your business.</p>
+                            <a href="#" class="service-link" data-service="salesforce"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-us" id="why-us-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose Quick Ops Technologies?</h2>
+                    <p>We are more than just a service provider - we are your strategic partner in growth</p>
+                </div>
+                <div class="benefits-container">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Skilled Talent Pool</h3>
+                        <p>Access to highly educated, English-fluent professionals with specialized training.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Cost Efficiency</h3>
+                        <p>Premium quality services at competitive rates, maximizing your ROI.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>24/7 Availability</h3>
+                        <p>Round-the-clock support ensuring your business needs are met at any time.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>High-Quality Standards</h3>
+                        <p>Rigorous quality control processes to ensure exceptional service delivery.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3>Budget-Friendly</h3>
+                        <p>Cost-effective solutions without compromising on quality or performance.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Data Security</h3>
+                        <p>Robust protocols ensuring confidentiality and compliance with international standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Connect with us today to discover how our virtual assistance solutions can drive your growth and efficiency</p>
+                <a href="#contact" class="btn cta-btn" data-page="contact">Get Started Now</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="page-section" id="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Quick Ops Technologies</h2>
+                    <p>Breaking away from the traditional BPO playbook</p>
+                </div>
+                
+                <div class="about-content">
+                    <p>Quick Ops Staffing breaks away from the traditional BPO playbook. Instead of a one-size-fits-all model, we deploy dedicated talent across strategic global hubs to strengthen and extend our clients' teams.</p>
+                    
+                    <p>Think about the countless repetitive tasks pulling your team away from high-value work. That's where Quick Ops steps in—providing skilled professionals trained to take those tasks off your plate with efficiency and precision.</p>
+                    
+                    <p>Our staff are directly assigned to your business, receive role-specific training, and operate from secure, state-of-the-art facilities.</p>
+                    
+                    <p>By tapping into talent-rich regions, particularly among recent graduates, we deliver a cost-effective solution that not only drives measurable results for your business but also empowers our professionals to support their families and uplift their communities.</p>
+                </div>
+                
+                <div class="mission-vision">
+                    <div class="mission-card">
+                        <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                        <p>Help EU & US businesses scale faster by pairing vetted Kenyan talent with rigorous process, tight SLAs, and clear KPIs—so leaders can focus on strategy, not swivel-chair tasks.</p>
+                    </div>
+                    
+                    <div class="vision-card">
+                        <h3><i class="fas fa-eye"></i> Our Difference</h3>
+                        <p>Outcome-first, not seat-first: We price for value and hold ourselves to pipeline, efficiency, and accuracy metrics—not vanity reports.</p>
+                    </div>
+                </div>
+                
+                <div class="section-title">
+                    <h3>What Sets Us Apart</h3>
+                </div>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>Timezone Coverage</h4>
+                        <p>EAT + split shifts for EST–PST and EU coverage that actually works.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4>Compliance by Design</h4>
+                        <p>GDPR-aligned processes, HIPAA-ready workflows, BAAs/DPAs on request.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Low Attrition</h4>
+                        <p>We hire for skills and coach for process discipline, ensuring high tenure.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h4>Embedded, Not Outsourced</h4>
+                        <p>Your tools, your playbooks, our execution for seamless integration.</p>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <h3>Social Impact</h3>
+                    <p>We train and hire youth from across Kenya and invest in digital skills and career mobility. When your ops scale, our local economy grows. That's a win-win we'll brag about.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers Section -->
+        <section class="page-section" id="careers-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Join Our Team</h2>
+                    <p>Be part of a company that's transforming the BPO industry while making a social impact</p>
+                </div>
+                
+                <div class="careers-grid">
+                    <div class="career-card">
+                        <h3>Virtual Assistant - Healthcare</h3>
+                        <div class="career-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        </div>
+                        <p>We're looking for detail-oriented individuals with knowledge of medical terminology to support our healthcare clients.</p>
+                        <a href="#contact" class="btn btn-outline" data-page="contact">Apply Now</a>
+                    </div>
+                    
+                    <div class="career-card">
+                        <h3>Cold Calling Specialist</h3>
+                        <div class="career-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        </div>
+                        <p>Join our sales team with excellent communication skills and experience in outbound calling for European and US markets.</p>
+                        <a href="#contact" class="btn btn-outline" data-page="contact">Apply Now</a>
+                    </div>
+                    
+                    <div class="career-card">
+                        <h3>Real Estate Support Agent</h3>
+                        <div class="career-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        </div>
+                        <p>Support real estate professionals with listing management, transaction coordination, and client communication.</p>
+                        <a href="#contact" class="btn btn-outline" data-page="contact">Apply Now</a>
+                    </div>
+                    
+                    <div class="career-card">
+                        <h3>Salesforce Administrator</h3>
+                        <div class="career-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        </div>
+                        <p>Manage and optimize Salesforce implementations for our clients, ensuring smooth CRM operations.</p>
+                        <a href="#contact" class="btn btn-outline" data-page="contact">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="section-title">
+                    <h3>Why Work With Us?</h3>
+                </div>
+                
+                <div class="benefits-container">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Training & Development</h3>
+                        <p>Continuous learning opportunities to enhance your skills and career growth.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Make an Impact</h3>
+                        <p>Your work directly contributes to community development and economic growth.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Great Culture</h3>
+                        <p>Collaborative work environment with supportive teammates and leadership.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="cta-section page-section" id="contact-section">
+            <div class="container">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Connect with us today to discover how our virtual assistance solutions can drive your growth and efficiency</p>
+                
+                <div class="form-container">
+                    <h3>Get In Touch</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" id="company" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <select id="service" class="form-input">
+                                <option value="">Select a service</option>
+                                <option value="virtual-assistance">Virtual Assistance</option>
+                                <option value="travel">Travel Assistance</option>
+                                <option value="healthcare">Healthcare Support</option>
+                                <option value="campaigns">Campaigns & Cold Calling</option>
+                                <option value="accounting">Accounting & Bookkeeping</option>
+                                <option value="real-estate">Real Estate Support</option>
+                                <option value="salesforce">Salesforce Support</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" class="form-textarea"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Optimized -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">Quick Ops<span class="footer-dot">.</span></div>
+                    <p>Premier virtual assistance and BPO solutions from Kenya to the world.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-page="home">Home</a></li>
+                        <li><a href="#services" data-page="services">Services</a></li>
+                        <li><a href="#why-us" data-page="why-us">Why Us</a></li>
+                        <li><a href="#about" data-page="about">About Us</a></li>
+                        <li><a href="#careers" data-page="careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services" data-page="services">Virtual Assistance</a></li>
+                        <li><a href="#services" data-page="services">Healthcare Support</a></li>
+                        <li><a href="#services" data-page="services">Real Estate VA</a></li>
+                        <li><a href="#services" data-page="services">Salesforce Support</a></li>
+                        <li><a href="#services" data-page="services">Cold Calling</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i> contact@quickopstech.com
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-globe"></i> Serving Worldwide
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Quick Ops Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Vanta.js background with better visibility settings
+        VANTA.NET({
+            el: "#vanta-background",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3498db,
+            backgroundColor: 0xecf0f1,
+            points: 10.00,
+            maxDistance: 20.00,
+            spacing: 15.00
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Function to show a specific page
+        function showPage(pageId) {
+            // Hide all page sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Hide the main sections too
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('services-section').style.display = 'none';
+            document.getElementById('why-us-section').style.display = 'none';
+            document.querySelector('.intro').style.display = 'none';
+            document.querySelector('.services').style.display = 'none';
+            document.querySelector('.cta-section').style.display = 'none';
+            
+            // Show the requested page
+            if (pageId === 'home') {
+                document.getElementById('home-section').style.display = 'flex';
+                document.querySelector('.intro').style.display = 'block';
+                document.querySelector('.services').style.display = 'block';
+                document.querySelector('.why-us').style.display = 'block';
+                document.querySelector('.cta-section').style.display = 'block';
+            } else if (pageId === 'services') {
+                document.getElementById('services-section').style.display = 'block';
+            } else if (pageId === 'why-us') {
+                document.getElementById('why-us-section').style.display = 'block';
+            } else if (pageId === 'contact') {
+                document.getElementById('contact-section').style.display = 'block';
+            } else {
+                document.getElementById(pageId + '-section').style.display = 'block';
+            }
+            
+            // Close mobile menu after selection
+            navMenu.classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Add event listeners to navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('data-page');
+                showPage(pageId);
+                
+                // Update URL hash
+                window.location.hash = pageId;
+            });
+        });
+        
+        // Add event listener to the Explore Our Services button
+        document.getElementById('explore-services-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage('services');
+            window.location.hash = 'services';
+        });
+        
+        // Check URL hash on page load
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                showPage(hash);
+            }
+        });
+        
+        // Add event listeners to service learn more links
+        document.querySelectorAll('.service-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('services');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will get back to you soon.');
+            document.getElementById('contact-form').reset();
+        });
+        
+        // Add scroll animation to elements
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .benefit-card, .career-card, .stat-item');
+            
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (position < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .benefit-card, .career-card, .stat-item').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(50px)';
+            element.style.transition = 'all 0.8s ease';
+        });
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        // Trigger once on load
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
